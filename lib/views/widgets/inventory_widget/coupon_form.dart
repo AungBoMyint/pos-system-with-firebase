@@ -50,6 +50,7 @@ class CouponFormWidget extends StatelessWidget {
                 child: Text(
                     "${DateTime.now().year}/${DateTime.now().month}/${DateTime.now().day}"),
               ),
+              const SizedBox(width: 15),
               //EndDate
               Obx(
                 () => InkWell(

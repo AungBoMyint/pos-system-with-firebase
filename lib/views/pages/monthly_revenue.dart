@@ -17,27 +17,30 @@ class MonthlyRevenue extends StatelessWidget {
             (_controller.dailySplayTreeMapList.value!.isNotEmpty)
         ? Column(
             children: [
-              Row(
-                children: [
-                  CustomCardForSales(
-                    headTitleText: _controller
-                        .getMonthName(_controller.getCurrentMonthDateTime()),
-                    color: Colors.red,
-                    total: "${_controller.monthlyProfit()}ks",
-                  ),
-                  CustomCardForSales(
-                    headTitleText: _controller
-                        .getMonthName(_controller.getCurrentMonthDateTime()),
-                    color: Colors.green,
-                    total: "${_controller.monthlyRevenue()}ks",
-                  ),
-                  CustomCardForSales(
-                    headTitleText: _controller
-                        .getMonthName(_controller.getCurrentMonthDateTime()),
-                    color: Colors.blue,
-                    total: "${_controller.monthlyOriginalRevenue()}ks",
-                  ),
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CustomCardForSales(
+                      headTitleText: _controller
+                          .getMonthName(_controller.getCurrentMonthDateTime()),
+                      color: Colors.red,
+                      total: "${_controller.monthlyProfit()}ks",
+                    ),
+                    CustomCardForSales(
+                      headTitleText: _controller
+                          .getMonthName(_controller.getCurrentMonthDateTime()),
+                      color: Colors.green,
+                      total: "${_controller.monthlyRevenue()}ks",
+                    ),
+                    CustomCardForSales(
+                      headTitleText: _controller
+                          .getMonthName(_controller.getCurrentMonthDateTime()),
+                      color: Colors.blue,
+                      total: "${_controller.monthlyOriginalRevenue()}ks",
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 15),
 

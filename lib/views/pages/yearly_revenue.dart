@@ -14,24 +14,27 @@ class YearlyRevenue extends StatelessWidget {
     SalesController _controller = Get.find();
     return Column(
       children: [
-        Row(
-          children: [
-            CustomCardForSales(
-              headTitleText: "${DateTime.now().year}",
-              color: Colors.red,
-              total: "${_controller.getCurrentYearProfit()}ks",
-            ),
-            CustomCardForSales(
-              headTitleText: "${DateTime.now().year}",
-              color: Colors.green,
-              total: "${_controller.getCurrentYearRevenue()}ks",
-            ),
-            CustomCardForSales(
-              headTitleText: "${DateTime.now().year}",
-              color: Colors.blue,
-              total: "${_controller.getCurrentYearCost()}ks",
-            ),
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              CustomCardForSales(
+                headTitleText: "${DateTime.now().year}",
+                color: Colors.red,
+                total: "${_controller.getCurrentYearProfit()}ks",
+              ),
+              CustomCardForSales(
+                headTitleText: "${DateTime.now().year}",
+                color: Colors.green,
+                total: "${_controller.getCurrentYearRevenue()}ks",
+              ),
+              CustomCardForSales(
+                headTitleText: "${DateTime.now().year}",
+                color: Colors.blue,
+                total: "${_controller.getCurrentYearCost()}ks",
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: 15),
         //

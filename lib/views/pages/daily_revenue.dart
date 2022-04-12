@@ -18,24 +18,27 @@ class DailyRevenue extends StatelessWidget {
             child: Column(
               children: [
                 //Top Daily Row
-                Row(
-                  children: [
-                    CustomCardForSales(
-                      headTitleText: "Today",
-                      color: Colors.red,
-                      total: _controller.todayProfit(),
-                    ),
-                    CustomCardForSales(
-                      headTitleText: "Today",
-                      color: Colors.green,
-                      total: "${_controller.todayRevenue()}",
-                    ),
-                    CustomCardForSales(
-                      headTitleText: "Today",
-                      color: Colors.blue,
-                      total: "${_controller.todayOriginalRevenue()}",
-                    ),
-                  ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      CustomCardForSales(
+                        headTitleText: "Today",
+                        color: Colors.red,
+                        total: _controller.todayProfit(),
+                      ),
+                      CustomCardForSales(
+                        headTitleText: "Today",
+                        color: Colors.green,
+                        total: "${_controller.todayRevenue()}",
+                      ),
+                      CustomCardForSales(
+                        headTitleText: "Today",
+                        color: Colors.blue,
+                        total: "${_controller.todayOriginalRevenue()}",
+                      ),
+                    ],
+                  ),
                 ),
                 //DailyBarChart
                 Center(
